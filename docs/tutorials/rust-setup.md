@@ -95,5 +95,26 @@ Within this configuration file we will need to define a few things:
 
 <code>image</code>: Image refers to the Docker image that will be used to run the dependencies that are needed for this project. We will need a base image that will compile our Rust code to run.  
 
-<code>customizations</code>: This specifier allows extensions to automatically be downloaded within the dev container. We will need the rust-analyzer extension installed.  
+<code>customizations</code>: This specifier allows extensions and other configurations to automatically be downloaded within the dev container. We will need the rust-analyzer extension installed.  
+
+<code>postCreatecommand</code>: These are the commands we will need to run after our container is created to make sure our Rust is up to date and that we have a recent version aftwards.
+
+Your devcontainer.json file should now have this:
+
+```json
+    {
+  "name": "dev container for rust. Hello World",
+  "image": "mcr.microsoft.com/devcontainers/rust:1-1-bullseye",
+  "postCreateCommand": "rustup update && rustc --version",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer"
+      ]
+    }
+  }
+}
+```
+
+Great! Now all we have to do is have VS Code read our configuration file to download our Rust image from Microsoft which will reopen our directory as a development container with everything needed to run rust.
 
