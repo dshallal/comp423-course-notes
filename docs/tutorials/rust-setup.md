@@ -94,3 +94,4 @@ Within this configuration file we will need to define a few things:
 <code>name</code>: Which is the name of our container. It is good to make this descriptive.
 <code>image</code>: Image refers to the Docker image that will be used to run the dependencies that are needed for this project. We will need a base image that will compile our Rust code to run.
 <code>customizations</code>: This specifier allows extensions to automatically be downloaded within the dev container. We will need the rust-analyzer extension installed.
+
