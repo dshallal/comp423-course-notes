@@ -118,3 +118,35 @@ Your devcontainer.json file should now have this:
 
 Great! Now all we have to do is have VS Code read our configuration file to download our Rust image from Microsoft which will reopen our directory as a development container with everything needed to run rust.
 
+4. Hit CTRL + Shift + P on Windows (or CMD + Shift + P on Mac) and run "Dev Containers: Reopen in Container".
+
+Afterwards you should see in your terminal something similar to this:
+
+```bash
+Running the postCreateCommand from devcontainer.json...
+
+[5329 ms] Start: Run in container: /bin/sh -c rustup update && rustc --version
+info: no updatable toolchains installed
+info: checking for self-update
+info: cleaning up downloads & tmp directories
+rustc 1.83.0 (90b35a623 2024-11-26)
+
+What's next:
+    Try Docker Debug for seamless, persistent debugging tools in any container o
+r image → docker debug 4bc6325493dc8cdfa23e7f2b83243ee6720366d1a63428513577abaec
+a72d958
+    Learn more at https://docs.docker.com/go/debug-cli/
+Done. Press any key to close the terminal.
+```
+The Rust version  should be <code>rustc 1.83.0</code> or higher (depending on when you are following this tutorial).
+
+### **Congratulations! You are now ready to create a standard Rust project and create some really cool code!**
+
+## Building a Rust Project for Hello World!
+
+1. In your terminal run:
+
+```bash
+cargo new hello_world --vcs none
+```
+This will tell Rust to make a new Rust project with the necessary file structure. <code>--vcs none</code> makes sure a new git repository isn't initialized in that directory.
