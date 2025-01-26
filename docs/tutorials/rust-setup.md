@@ -115,6 +115,8 @@ Your devcontainer.json file should now have this:
   }
 }
 ```
+!!! note "rust-lang.rust-analyzer VSCode Extension"
+    This extension enhances Rust development with features like code completion, error checking, inlay hints, and syntax highlighting. It integrates with the Rust toolchain, offering tools like Go to Definition and code navigation, making coding more efficient and productive.
 
 Great! Now all we have to do is have VS Code read our configuration file to download our Rust image from Microsoft which will reopen our directory as a development container with everything needed to run rust.
 
@@ -171,4 +173,12 @@ You should now see <code>Hello COMP423</code> to the stdout. Hooray!!!!
 We can do all of these steps actually in **one**. To do this we can run, <code> cargo run </code> which does *both* compile, create the executable, and run all in one command. So, <code>cargo build</code> actually creates the binary executable, while <code>cargo run</code> does so and runs the executable.
 
 # **Conclusion**
-Make sure to commit and push your changes to your remote repository so that you can always come back and write some more Rust code! You have learned from 0 to 100 how to create a Rust project within a development container, all while using version control. Congratulations again!
+Make sure to commit and push your changes to your remote repository so that you can always come back and write some more Rust code! You can do this by running the following commands: 
+```bash
+git add .
+git commit -m "Finished Rust Dev Container"
+git push
+```
+You have learned from 0 to 100 how to create a Rust project within a development container, all while using version control. Congratulations again!
+
+**Citation**: All three steps on the main tutorial are heavily inspired from Kris Jordan's [Starting a Static Website Project with MkDocs.](https://comp423-25s.github.io/resources/MkDocs/tutorial/)
