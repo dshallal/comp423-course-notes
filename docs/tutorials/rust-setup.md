@@ -103,7 +103,7 @@ Your devcontainer.json file should now have this:
 
 ```json
     {
-  "name": "dev container for rust. Hello World",
+  "name": "dev container for rust. HELLO COMP423",
   "image": "mcr.microsoft.com/devcontainers/rust:1-1-bullseye",
   "postCreateCommand": "rustup update && rustc --version",
   "customizations": {
@@ -140,9 +140,9 @@ Done. Press any key to close the terminal.
 ```
 The Rust version  should be <code>rustc 1.83.0</code> or higher (depending on when you are following this tutorial).
 
-### **Congratulations! You are now ready to create a standard Rust project and create some really cool code!**
+**Congratulations! You are now ready to create a standard Rust project and create some really cool code!**
 
-## Building a Rust Project for Hello World!
+## Building a Rust Project for Hello COMP423
 
 1. In your terminal run:
 
@@ -150,3 +150,25 @@ The Rust version  should be <code>rustc 1.83.0</code> or higher (depending on wh
 cargo new hello_world --vcs none
 ```
 This will tell Rust to make a new Rust project with the necessary file structure. <code>--vcs none</code> makes sure a new git repository isn't initialized in that directory.
+
+Now you should see a directory called hello_world, with a src folder and Cargo.toml that is used to define dependencies for the Rust project. Under src, you will see main.rs that has a hello world program that you will be able to run! Let's change what it prints out now to:
+
+```rust
+fn main() {
+    println!("Hello COMP423");
+}
+```
+
+Now you will need to go into the hello_world directory. In your terminal, run <code>cd hello_world</code>.
+
+Afterwards, run <code>cargo build</code>, which is similar to how C uses <code>gcc</code> to compile C into binary. Both will utilize their respective compilers to turn their code files into binary executables a computer can execute.
+
+Now there should be a directory called "target" within your Rust project that will hold your built executable.
+To run it, we have to describe the file path along with <code>./</code> to tell our computer to run the binary exectuable. This is <code>./target/debug/hello_world</code>.
+
+You should now see <code>Hello COMP423</code> to the stdout. Hooray!!!!
+
+We can do all of these steps actually in **one**. To do this we can run, <code> cargo run </code> which does *both* compile, create the executable, and run all in one command. So, <code>cargo build</code> actually creates the binary executable, while <code>cargo run</code> does so and runs the executable.
+
+# **Conclusion**
+Make sure to commit and push your changes to your remote repository so that you can always come back and write some more Rust code! You have learned from 0 to 100 how to create a Rust project within a development container, all while using version control. Congratulations again!
